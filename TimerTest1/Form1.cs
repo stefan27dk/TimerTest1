@@ -17,7 +17,7 @@ namespace TimerTest1
     {
         string savePath = "C://";
         string saveName = "";
-        string localPath = "";/* Path.GetDirectoryName(savePath);*/
+        
 
      
 
@@ -43,9 +43,6 @@ namespace TimerTest1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Resize
-            int x = timeTable_listView.Width;
-            int y = timeTable_listView.Height;
 
             Timer1();
         }
@@ -124,6 +121,12 @@ namespace TimerTest1
 
                     timer1.Stop();
                     seconds = 0;
+                    ChangeTextBoxColorReset();
+
+                    // Sound End "Tada"
+                    System.Media.SoundPlayer endsound = new System.Media.SoundPlayer(@"C:\Windows\Media\tada.wav");
+                    endsound.Play();
+
                 }
 
 
@@ -273,19 +276,81 @@ namespace TimerTest1
         {
             if (timer1.Enabled == false)
             {
+
+
                 ChangeTime();
                 timer1.Enabled = true;
                 DisableTextboxes();// Disable Textboxes
                 timer1.Start();
 
+                // If time is 0 and the time is set to count down
+                if (countDownTrigger == true && (hours_textBox.Text == "0" && minutes_textBox.Text == "0" && seconds_textBox.Text == "0"))
+                {
+                    // Info Message
+                    MessageBox.Show("The Time is set to count down please change to count UP or \"Change the start time in the textboxes so its not 0\"", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            
+                 // Time Count Up Color
+                if(countDownTrigger == false)
+                {
+                    ChangeTextBoxColorCountUp();
+                }
+           
             }
             else
             {   // Pause
                 timer1.Enabled = false;
                 EnableTextboxes(); // Enable Textboxes
+                ChangeTextBoxColorInactive();
             }
         }
 
+
+
+       
+        // Count Up Color
+        private void ChangeTextBoxColorCountUp()
+        {
+            seconds_textBox.BackColor = Color.FromArgb(150, 236, 255);
+            minutes_textBox.BackColor = Color.FromArgb(150, 236, 255);
+            hours_textBox.BackColor = Color.FromArgb(150, 236, 255);
+
+        }
+
+
+
+
+        // Inactive textboxzes Color "On Stop this color"
+        private void ChangeTextBoxColorInactive()
+        {
+            seconds_textBox.BackColor = Color.FromArgb(255, 150, 150);
+            minutes_textBox.BackColor = Color.FromArgb(255, 150, 150);
+            hours_textBox.BackColor = Color.FromArgb(255, 150, 150);
+
+        }
+
+
+
+        // Reset Color Textboxes
+        private void ChangeTextBoxColorReset()
+        {
+            seconds_textBox.BackColor = Color.FromArgb(228, 255, 171);
+            minutes_textBox.BackColor = Color.FromArgb(228, 255, 171);
+            hours_textBox.BackColor = Color.FromArgb(228, 255, 171);
+
+        }
+
+
+
+        // Color Count Down
+        private void ChangeTextBoxColorCountDown()
+        {
+            seconds_textBox.BackColor = Color.FromArgb(255, 186, 133);
+            minutes_textBox.BackColor = Color.FromArgb(255, 186, 133);
+            hours_textBox.BackColor = Color.FromArgb(255, 186, 133);
+
+        }
 
 
 
@@ -296,11 +361,17 @@ namespace TimerTest1
             if(countDownTrigger == false)
             {
                 countDownTrigger = true;
+                count_down_button.BackgroundImage = Properties.Resources.Upload_icon__2_;
+                ChangeTextBoxColorCountDown(); // Color
             }
 
             else
             {
+
                 countDownTrigger = false;
+                count_down_button.BackgroundImage = Properties.Resources.Upload_icon__3_;
+                ChangeTextBoxColorCountUp(); // Color
+
             }
 
         }
@@ -367,6 +438,9 @@ namespace TimerTest1
         private void reset_button_Click(object sender, EventArgs e)
         {
             Reset();
+
+            // Reset Color
+            ChangeTextBoxColorReset();
         }
 
 
@@ -425,20 +499,19 @@ namespace TimerTest1
         }
 
 
-        // Abort Edir // Cancel Edit
+        // Abort Edit // Cancel Edit
         private void AbortEdit_button_Click(object sender, EventArgs e)
         {
             edit_textBox.Text = "";
         }
 
 
-        // Change Listview Size
-        private void resize_trackBar_Scroll(object sender, EventArgs e)
-        {
+ 
 
 
-        }
 
+
+        // Resize Listview  "Trackbar"
         private void resize_trackBar_ValueChanged(object sender, EventArgs e)
         {
              
@@ -447,6 +520,9 @@ namespace TimerTest1
             textBox2.Text = resize_trackBar.Value.ToString();
 
         }
+
+
+
 
 
 
@@ -487,10 +563,14 @@ namespace TimerTest1
          
         }
 
+
+
+
+
         // Open Local Folder
         private void open_folder_button_Click(object sender, EventArgs e)
         {
-            Process.Start(localPath);
+            Process.Start(savePath);
         }
     }
 }

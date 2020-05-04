@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-Folder-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\win7_ico_shell32_dll-003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-edit-delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-event-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-stop-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Step-Forward-Hot-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eject-Hot-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reload-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload-icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
