@@ -529,41 +529,47 @@ namespace TimerTest1
         // Save File Button
         private void save_button_Click(object sender, EventArgs e)
         {
+            SaveListView();
+                            
+        }
+
+
+
+        // Save main Method
+        private void SaveListView()
+        {
             // Make the file name so it maches all streamwriters "If it is at the top it gets the time when the application was started and the name with date will not change"
             saveName = "Timer -" + DateTime.Now.ToString("dd -MM-yyyy  HH-mm-ss") + ".txt";
 
 
-            System.IO.File.AppendAllText(savePath+saveName, Environment.NewLine + Environment.NewLine);
+            System.IO.File.AppendAllText(savePath + saveName, Environment.NewLine + Environment.NewLine);
 
-                // Columns NAMES
-                for (int c = 0; c < timeTable_listView.Columns.Count; c++)
+            // Columns NAMES
+            for (int c = 0; c < timeTable_listView.Columns.Count; c++)
+            {
+                System.IO.File.AppendAllText(savePath + saveName, timeTable_listView.Columns[c].Text + "\t");
+            }
+
+            // Add new Line int the txt file
+            System.IO.File.AppendAllText(savePath + saveName, Environment.NewLine + Environment.NewLine);
+
+
+            // Get all Items  "loop All items"
+            for (int i = 0; i < timeTable_listView.Items.Count; i++)
+            {
+
+                // Loop all Sub Items of the Current Item "[i]"
+                for (int a = 0; a < timeTable_listView.Items[i].SubItems.Count; a++)
                 {
-                    System.IO.File.AppendAllText(savePath+saveName, timeTable_listView.Columns[c].Text + "\t");
+                    // Write the sub item "[a]" to the file with "tab betwen each item"
+                    System.IO.File.AppendAllText(savePath + saveName, timeTable_listView.Items[i].SubItems[a].Text + "\t");
                 }
 
-                // Add new Line int the txt file
-                System.IO.File.AppendAllText(savePath+saveName, Environment.NewLine + Environment.NewLine);
+                // Add new Line "the new Row" starts at new line
+                System.IO.File.AppendAllText(savePath + saveName, Environment.NewLine);
+            }
 
-
-                // Get all Items  "loop All items"
-                for (int i = 0; i < timeTable_listView.Items.Count; i++)
-                {
-
-                    // Loop all Sub Items of the Current Item "[i]"
-                    for (int a = 0; a < timeTable_listView.Items[i].SubItems.Count; a++)
-                    {
-                        // Write the sub item "[a]" to the file with "tab betwen each item"
-                        System.IO.File.AppendAllText(savePath+saveName, timeTable_listView.Items[i].SubItems[a].Text + "\t");
-                    }
-
-                    // Add new Line "the new Row" starts at new line
-                    System.IO.File.AppendAllText(savePath+saveName, Environment.NewLine);
-                }
-            
-         
         }
-
-
 
 
 
@@ -571,6 +577,13 @@ namespace TimerTest1
         private void open_folder_button_Click(object sender, EventArgs e)
         {
             Process.Start(savePath);
+        }
+
+
+        // Save before Exit
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveListView();
         }
     }
 }

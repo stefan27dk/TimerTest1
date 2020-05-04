@@ -52,14 +52,16 @@
             this.day_label = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.timer_Controls_holder_panel = new System.Windows.Forms.Panel();
+            this.equals_label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.resetAndContinue_button = new System.Windows.Forms.Button();
+            this.AddresetAnd_stop_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.refresh_label = new System.Windows.Forms.Label();
             this.add_label = new System.Windows.Forms.Label();
             this.start_label = new System.Windows.Forms.Label();
             this.stop_button = new System.Windows.Forms.Button();
             this.Up_Down_label = new System.Windows.Forms.Label();
-            this.AddresetAnd_stop_button = new System.Windows.Forms.Button();
-            this.resetAndContinue_button = new System.Windows.Forms.Button();
             this.reset_button = new System.Windows.Forms.Button();
             this.count_down_button = new System.Windows.Forms.Button();
             this.StartPause_button1 = new System.Windows.Forms.Button();
@@ -69,12 +71,10 @@
             this.open_folder_button = new System.Windows.Forms.Button();
             this.save_Edit_button = new System.Windows.Forms.Button();
             this.AbortEdit_button = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.equals_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.resize_trackBar)).BeginInit();
             this.timer_Controls_holder_panel.SuspendLayout();
-            this.holder_panel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.holder_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // hours_textBox
@@ -310,6 +310,59 @@
             this.timer_Controls_holder_panel.Size = new System.Drawing.Size(347, 124);
             this.timer_Controls_holder_panel.TabIndex = 27;
             // 
+            // equals_label
+            // 
+            this.equals_label.AutoSize = true;
+            this.equals_label.Font = new System.Drawing.Font("Miriam CLM", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.equals_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(193)))), ((int)(((byte)(106)))));
+            this.equals_label.Location = new System.Drawing.Point(82, 25);
+            this.equals_label.Name = "equals_label";
+            this.equals_label.Size = new System.Drawing.Size(13, 15);
+            this.equals_label.TabIndex = 31;
+            this.equals_label.Text = "=";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.resetAndContinue_button);
+            this.panel1.Controls.Add(this.AddresetAnd_stop_button);
+            this.panel1.Location = new System.Drawing.Point(241, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(87, 58);
+            this.panel1.TabIndex = 30;
+            // 
+            // resetAndContinue_button
+            // 
+            this.resetAndContinue_button.BackgroundImage = global::TimerTest1.Properties.Resources.Untitled;
+            this.resetAndContinue_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.resetAndContinue_button.FlatAppearance.BorderSize = 0;
+            this.resetAndContinue_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.resetAndContinue_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.resetAndContinue_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetAndContinue_button.Location = new System.Drawing.Point(3, 3);
+            this.resetAndContinue_button.Name = "resetAndContinue_button";
+            this.resetAndContinue_button.Size = new System.Drawing.Size(77, 25);
+            this.resetAndContinue_button.TabIndex = 8;
+            this.resetAndContinue_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.resetAndContinue_button.UseVisualStyleBackColor = true;
+            this.resetAndContinue_button.Click += new System.EventHandler(this.resetAndContinue_button_Click);
+            // 
+            // AddresetAnd_stop_button
+            // 
+            this.AddresetAnd_stop_button.BackgroundImage = global::TimerTest1.Properties.Resources.Untitled__1_;
+            this.AddresetAnd_stop_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddresetAnd_stop_button.FlatAppearance.BorderSize = 0;
+            this.AddresetAnd_stop_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.AddresetAnd_stop_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.AddresetAnd_stop_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddresetAnd_stop_button.Location = new System.Drawing.Point(4, 27);
+            this.AddresetAnd_stop_button.Name = "AddresetAnd_stop_button";
+            this.AddresetAnd_stop_button.Size = new System.Drawing.Size(75, 23);
+            this.AddresetAnd_stop_button.TabIndex = 14;
+            this.AddresetAnd_stop_button.UseVisualStyleBackColor = true;
+            this.AddresetAnd_stop_button.Click += new System.EventHandler(this.AddresetAnd_stop_button_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -380,37 +433,6 @@
             this.Up_Down_label.Size = new System.Drawing.Size(30, 14);
             this.Up_Down_label.TabIndex = 26;
             this.Up_Down_label.Text = "U/D";
-            // 
-            // AddresetAnd_stop_button
-            // 
-            this.AddresetAnd_stop_button.BackgroundImage = global::TimerTest1.Properties.Resources.Untitled__1_;
-            this.AddresetAnd_stop_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AddresetAnd_stop_button.FlatAppearance.BorderSize = 0;
-            this.AddresetAnd_stop_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.AddresetAnd_stop_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.AddresetAnd_stop_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddresetAnd_stop_button.Location = new System.Drawing.Point(4, 27);
-            this.AddresetAnd_stop_button.Name = "AddresetAnd_stop_button";
-            this.AddresetAnd_stop_button.Size = new System.Drawing.Size(75, 23);
-            this.AddresetAnd_stop_button.TabIndex = 14;
-            this.AddresetAnd_stop_button.UseVisualStyleBackColor = true;
-            this.AddresetAnd_stop_button.Click += new System.EventHandler(this.AddresetAnd_stop_button_Click);
-            // 
-            // resetAndContinue_button
-            // 
-            this.resetAndContinue_button.BackgroundImage = global::TimerTest1.Properties.Resources.Untitled;
-            this.resetAndContinue_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.resetAndContinue_button.FlatAppearance.BorderSize = 0;
-            this.resetAndContinue_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.resetAndContinue_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.resetAndContinue_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetAndContinue_button.Location = new System.Drawing.Point(3, 3);
-            this.resetAndContinue_button.Name = "resetAndContinue_button";
-            this.resetAndContinue_button.Size = new System.Drawing.Size(77, 25);
-            this.resetAndContinue_button.TabIndex = 8;
-            this.resetAndContinue_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.resetAndContinue_button.UseVisualStyleBackColor = true;
-            this.resetAndContinue_button.Click += new System.EventHandler(this.resetAndContinue_button_Click);
             // 
             // reset_button
             // 
@@ -535,28 +557,6 @@
             this.AbortEdit_button.UseVisualStyleBackColor = true;
             this.AbortEdit_button.Click += new System.EventHandler(this.AbortEdit_button_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.resetAndContinue_button);
-            this.panel1.Controls.Add(this.AddresetAnd_stop_button);
-            this.panel1.Location = new System.Drawing.Point(241, 52);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(87, 58);
-            this.panel1.TabIndex = 30;
-            // 
-            // equals_label
-            // 
-            this.equals_label.AutoSize = true;
-            this.equals_label.Font = new System.Drawing.Font("Miriam CLM", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.equals_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(193)))), ((int)(((byte)(106)))));
-            this.equals_label.Location = new System.Drawing.Point(82, 25);
-            this.equals_label.Name = "equals_label";
-            this.equals_label.Size = new System.Drawing.Size(13, 15);
-            this.equals_label.TabIndex = 31;
-            this.equals_label.Text = "=";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,13 +566,14 @@
             this.Controls.Add(this.holder_panel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.resize_trackBar)).EndInit();
             this.timer_Controls_holder_panel.ResumeLayout(false);
             this.timer_Controls_holder_panel.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.holder_panel.ResumeLayout(false);
             this.holder_panel.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
